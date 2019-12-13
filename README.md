@@ -2,6 +2,11 @@
 Prueba
 
 # Preparaciones Iniciales:
+-Tener Instalado Java 1.8 y superior
+
+-Tener Instalado Maven
+
+-Tener Postgresql
 
 -Crear base de datos en postgres segun esta configurado en el aplication.yml 
 
