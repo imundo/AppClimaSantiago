@@ -26,15 +26,14 @@ mvn clean spring-boot:run
 POST /api/comunaClima
 http://localhost:8080/api/comunaClima
 
-
-https://github.com/imundo/AppClimaSantiago/blob/master/img/addClima.PNG
-
 <img src="https://github.com/imundo/AppClimaSantiago/blob/master/img/addClima.PNG">
 
 
 -Mostrar todos los Climas Registrados:
 GET /api/comunaClima
 http://localhost:8080/api/comunaClima
+
+<img src="https://github.com/imundo/AppClimaSantiago/blob/master/img/viewClima.PNG">
 
 
 
