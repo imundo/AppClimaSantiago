@@ -5,8 +5,8 @@ spring:
   # Database
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/clima_db?createDatabaseIfNotExist=true
-    username: ppl
+    url: jdbc:postgresql://localhost:5432/c1?createDatabaseIfNotExist=true
+    username: ppl	
     password: ppl123
   # JPA properties
   jpa:

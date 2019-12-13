@@ -8,5 +8,5 @@ import java.util.List;
 
 @RepositoryRestResource
 public interface ComunaRepository extends JpaRepository<Comuna, Long> {
-    List<Comuna> findByName(String comuna);
+    List<Comuna> findByName(String name);
 }

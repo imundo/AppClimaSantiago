@@ -2,36 +2,30 @@ package com.hendisantika.springbootrestapipostgresql.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
 
 @Entity
 public class Comuna {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    private String name;
+    private String description;
     private String status;
-    private String location;
+    private Long day;
     private String url;
-    private Double tempmin;
-    private Double tempmax;
-    private String unit;
+
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "day")
-    @Column(name = "Value")
-    private List<String> days = new ArrayList<>();
+    @CollectionTable(name = "clima")
+    @Column(name = "detallesClima")
+    private List<String> climas = new ArrayList<>();
 
 
-
-    public Comuna(String status, String location, String url, Double tempmin, Double tempmax, List<String> days) {
-        this.status = status;
-        this.url = url;
-        this.location = location;
-        this.tempmin = tempmin;
-        this.tempmax = tempmax;
-        this.days = days;
-
+    public Comuna(String name, String description, List<String> climas) {
+        this.name = name;
+        this.description = description;
+        this.climas = climas;
     }
 
     public Comuna() {
@@ -41,9 +35,29 @@ public class Comuna {
         return id;
     }
 
+    public String getName() {
+        return name;
+    }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
+    public List<String> getClimas() {
+        return climas;
+    }
+
+    public void setClimas(List<String> climas) {
+        this.climas = climas;
     }
 
     public String getStatus() {
@@ -54,12 +68,12 @@ public class Comuna {
         this.status = status;
     }
 
-    public String getLocation() {
-        return location;
+    public Long getDay() {
+        return day;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setDay(Long day) {
+        this.day = day;
     }
 
     public String getUrl() {
@@ -70,45 +84,15 @@ public class Comuna {
         this.url = url;
     }
 
-    public Double getTempmin() {
-        return tempmin;
-    }
-
-    public void setTempmin(Double tempmin) {
-        this.tempmin = tempmin;
-    }
-
-    public Double getTempmax() {
-        return tempmax;
-    }
-
-    public void setTempmax(Double tempmax) {
-        this.tempmax = tempmax;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public List<String> getDays() {
-        return days;
-    }
-
-    public void setDays(List<String> days) {
-        this.days = days;
-    }
-
     @Override
     public String toString() {
-        return "Comuna{" +
+        return "Book{" +
                 "id=" + id +
-                ", location='" + location + '\'' +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
                 ", url='" + url + '\'' +
-                ", days="  + days +
+                ", day='" + day + '\'' +
+                ", tags=" + climas +
                 '}';
     }
 }
