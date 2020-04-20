@@ -15,8 +15,8 @@ Ejemplo:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/c1?createDatabaseIfNotExist=true
-    username: ppl	
-    password: ppl123"
+    username: abc	
+    password: abc123"
     
     
 -En el aplication.yml se puede personalizar niveles de seguridad, conexiones, entre otrs de ser necesario.
